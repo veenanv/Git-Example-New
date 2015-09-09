@@ -1,0 +1,23 @@
+"$catalog-id=th_content";;;;;;;;;;;;
+"$catalog-name=Thomson Travel Content";;;;;;;;;;;;
+;;;;;;;;;;;;
+
+"$thmobilecatalog-id=thmobile_content"
+"$thmobilecatalog-name=Mobile Thomson Travel Content"
+
+"$contentCV=catalogVersion(catalog(id[default=$catalog-id]),version[default=Staged])[default=$catalog-id:Staged]";;;;;;;;;;;;
+"$thMobileContentCV=catalogVersion(catalog(id[default=$thmobilecatalog-id]),version[default=Staged])[default=$thmobilecatalog-id:Staged]";;;;;;;;;;;;
+"$productCV=catalogVersion(catalog(id[default='travel_catalog']),version[default='Online'])[default='travel_catalog:Online']";;;;;;;;;;;;
+
+"$approvalStatus=approvalStatus(code[default='approved'])"
+$supercategories=supercategories(code, $productCV);
+
+
+$jarResourceCms=jar:uk.co.tui.feeds.jalo.TUISystemSetup&/tui/import/cockpits/cmscockpit
+$htmlSnippets=jar:uk.co.tui.feeds.jalo.TUISystemSetup&/tui/paragraphHtmls/th
+;;;;;;;;;;;;;
+
+
+"INSERT_UPDATE HowLongDuration";"code[unique=true]";"order";"stay";"durationRange";"description";holidayFinderComponent(uid,$thMobileContentCV);brandType(code);
+
+;"thfourteennights";4;"14";"14";"around 2 weeks";WF_COM_301;TH;
